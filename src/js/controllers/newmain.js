@@ -10,7 +10,7 @@
 
   ready(function () {
 
-    /*
+    
     loginmodule.doCheckLoginStatus(function (loggedIn) {
       if (loggedIn) {
         // set up UI for the user that isn't signed in on app load
@@ -22,7 +22,7 @@
         domStyle.set("personalizedPanel", "display", "none");
       };
     });
-    */
+    
     doSetEventHandlers();
     domStyle.set("anonymousPanel", "display", "block");
 

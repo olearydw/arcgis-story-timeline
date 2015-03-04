@@ -9,6 +9,18 @@
     padding: 0px;
   }
 
+  .anonymousPanel{
+    display: none; 
+    padding: 5px; 
+    text-align: center;
+  }
+
+  .personalizedPanel{
+    display: none; 
+    padding: 5px; 
+    text-align: center;
+  }
+
   .esri-item-gallery .esri-item-container {
     float: left;
     text-align: center;
@@ -44,4 +56,8 @@
     color: blue;
     cursor: pointer;
     text-decoration: underline;
+  }
+
+  .userId{
+    font-weight: bold;
   }
