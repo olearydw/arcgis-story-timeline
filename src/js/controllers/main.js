@@ -1,104 +1,42 @@
-﻿
-require([
-"esri/arcgis/Portal",
-"esri/arcgis/OAuthInfo",
-"esri/IdentityManager",
-"dojo/dom-style",
-"dojo/dom-attr",
-"dojo/dom",
-"dojo/on",
-"dojo/_base/array",
-"dojo/domReady!"
-], function (arcgisPortal, OAuthInfo, esriId,
-domStyle, domAttr, dom, on, arrayUtils){
-    var info = new OAuthInfo({
-        appId: "yGaPXbbzACYnaKJQ",
-        //authNamespace: "portal_oauth_popup",
-        popup: true
+﻿require([
+  "dojo/ready",
+  "dojo/dom-style",
+  "dojo/dom-attr",
+  "dojo/dom",
+  "dojo/on",
+  "utils/loginmodule",
+  "utils/viewmodule",
+  "dojo/domReady!"
+], function (ready, domStyle, domAttr, dom, on, loginmodule, viewmodule) {
+
+  ready(function () {
+
+    
+    loginmodule.doCheckLoginStatus(function (loggedIn) {
+      viewmodule.doSetLoginView(loggedIn);
     });
-    esriId.registerOAuthInfos([info]);
+    
+    doSetEventHandlers();
+    //domStyle.set("anonymousPanel", "display", "block");
 
-    esriId.checkSignInStatus(info.portalUrl).then(
-    function (){
-        displayItems();
-    }
-    ).otherwise(
-    function (){
-        // Anonymous view
-        domStyle.set("anonymousPanel", "display", "block");
-        domStyle.set("personalizedPanel", "display", "none");
-    }
-    );
+  });
 
-    on(dom.byId("sign-in"), "click", function (){
-        console.log("click", arguments);
-        // user will be shown the OAuth Sign In page
-        esriId.getCredential(info.portalUrl, {
-            oAuthPopupConfirmation: false
-        }
-        ).then(function (){
-            displayItems();
-        });
+  function doSetEventHandlers() {
+    on(dom.byId("sign-in"), "click", handleSignIn);
+    on(dom.byId("sign-out"), "click", handleSignOut);
+  };
+
+
+  function handleSignIn() {
+    loginmodule.doOauthFormLogin(function (loggedIn) {
+      viewmodule.doSetLoginView(loggedIn);
     });
+  };
 
-    on(dom.byId("sign-out"), "click", function (){
-        esriId.destroyCredentials();
-        window.location.reload();
+  function handleSignOut() {
+    loginmodule.doOauthSignOut(function (loggedOut) {
+      window.location.reload();
     });
+  };
 
-    function displayItems(){
-        new arcgisPortal.Portal("https://www.arcgis.com").signIn().then(
-        function (portalUser){
-            console.log("Signed in to the portal: ", portalUser);
-
-            domAttr.set("userId", "innerHTML", portalUser.fullName);
-            domStyle.set("anonymousPanel", "display", "none");
-            domStyle.set("personalizedPanel", "display", "block");
-
-            queryPortal(portalUser);
-        }
-        ).otherwise(
-        function (error){
-            console.log("Error occurred while signing in: ", error);
-        }
-        );
-    }
-
-    function queryPortal(portalUser){
-        var portal = portalUser.portal;
-
-        //See list of valid item types here:  http://www.arcgis.com/apidocs/rest/index.html?itemtypes.html
-        //See search reference here:  http://www.arcgis.com/apidocs/rest/index.html?searchreference.html
-        var queryParams = {
-            q: "owner:" + portalUser.username,
-            sortField: "numViews",
-            sortOrder: "desc",
-            num: 20
-        };
-
-        portal.queryItems(queryParams).then(createGallery);
-    }
-
-    function createGallery(items){
-        var htmlFragment = "";
-
-        arrayUtils.forEach(items.results, function (item){
-            htmlFragment += (
-            "<div class=\"esri-item-container\">" +
-            (
-            item.thumbnailUrl ?
-            "<div class=\"esri-image\" style=\"background-image:url(" + item.thumbnailUrl + ");\"></div>" :
-                "<div class=\"esri-image esri-null-image\">Thumbnail not available</div>"
-            ) +
-            (
-            item.title ?
-            "<div class=\"esri-title\">" + (item.title || "") + "</div>" :
-                "<div class=\"esri-title esri-null-title\">Title not available</div>"
-            ) +
-            "</div>"
-            );
-        });
-
-        dom.byId("itemGallery").innerHTML = htmlFragment;
-    }
 });

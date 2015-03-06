@@ -3,21 +3,25 @@
   "esri/arcgis/Portal",
   "esri/arcgis/OAuthInfo",
   "esri/IdentityManager",
+  "models/modelmodule",
+  "config/config",
   "dojo/domReady!"
-], function(ready, arcgisPortal, OAuthInfo, esriId){
+], function(ready, arcgisPortal, OAuthInfo, esriId, modelmodule, config){
   ready(function () {
     //console.log('ready in the loginmodule');
+    //console.log(config.appId);
   });
 
   var login = {};
+
   var info = new OAuthInfo({
-    appId: "yGaPXbbzACYnaKJQ",
+    appId: config.appId,
     authNamespace: "portal_oauth_popup",
-    expiration: 120,
+    expiration: 30,
     locale: "en-us",
     minTimeUntilExpiration: 20,
     popupCallbackUrl: "oauth-callback.html",
-    portalUrl: "https://www.arcgis.com",
+    portalUrl: config.portalUrl,
     popup: true
   });
 
@@ -26,7 +30,7 @@
   login.doCheckLoginStatus = function (callback) {
     esriId.checkSignInStatus(info.portalUrl).then(
       function (obj) {
-        console.log(obj);
+        modelmodule.setCredentialObj(obj);
         callback(true);
       }
     ).otherwise(
@@ -39,13 +43,14 @@
     esriId.getCredential(info.portalUrl, {
       oAuthPopupConfirmation: false
     }).then(function (obj) {
-      console.log(obj);
+      modelmodule.setCredentialObj(obj);
       callback(true);
     });
   };
 
   login.doOauthSignOut = function (callback) {
     esriId.destroyCredentials();
+    modelmodule.destroyCredentialObj();
     callback(true);
   }
 
