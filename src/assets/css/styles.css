@@ -9,16 +9,16 @@
     padding: 0px;
   }
 
-  .anonymousPanel{
-    display: none; 
-    padding: 5px; 
-    text-align: center;
+  .logInControlDiv {
+    height: 35px;
   }
 
-  .personalizedPanel{
-    display: none; 
-    padding: 5px; 
-    text-align: center;
+  .signInBtn {
+    display: none;
+  }
+
+  .signOutBtn {
+    display: none;
   }
 
   .esri-item-gallery .esri-item-container {

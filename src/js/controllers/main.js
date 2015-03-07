@@ -22,8 +22,8 @@
   });
 
   function doSetEventHandlers() {
-    on(dom.byId("sign-in"), "click", handleSignIn);
-    on(dom.byId("sign-out"), "click", handleSignOut);
+    on(dom.byId("signInBtn"), "click", handleSignIn);
+    on(dom.byId("signOutBtn"), "click", handleSignOut);
   };
 
 

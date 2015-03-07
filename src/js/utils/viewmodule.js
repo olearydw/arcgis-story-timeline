@@ -16,13 +16,13 @@
   };
 
   view.doShowSignIn = function () {
-    domStyle.set("anonymousPanel", "display", "block");
-    domStyle.set("personalizedPanel", "display", "none");
+    domStyle.set("signInBtn", "display", "block");
+    domStyle.set("signOutBtn", "display", "none");
   };
 
   view.doShowSignOut = function () {
-    domStyle.set("anonymousPanel", "display", "none");
-    domStyle.set("personalizedPanel", "display", "block");
+    domStyle.set("signInBtn", "display", "none");
+    domStyle.set("signOutBtn", "display", "block");
   };
 
   return view;
