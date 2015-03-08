@@ -15,8 +15,11 @@
 
   model.setCredentialObj = function (cObj) {
     credentialObj = cObj;
-    console.log(credentialObj);
   };
+
+  model.getCredentialObj = function () {
+    return credentialObj;
+  }
 
   model.destroyCredentialObj = function () {
     credentialObj = {};

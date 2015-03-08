@@ -5,20 +5,26 @@ define([
 	"dojo/on",
 	"dojo/date"
 ], function (ready, dom, on, date) {
-    var dates = {};
+  var dates = {};
 
-    ready(function () {
-        console.log('dates module is ready');
-    });
+  ready(function () {
+    //console.log('dates module is ready');
+  });
 
-    dates.getTodayValue = function () {
-      console.log('get today fired');
-      var d = new Date();
-      console.log(d);
-      return d;
-    };
+  dates.getTodayValue = function () {
+    console.log('get today fired');
+    var d = new Date();
+    console.log(d);
+    return d;
+  };
+
+  dates.formatDateToUTC = function (dateObj) {
+    return dateObj.toUTCString();
+  };
 
 
 
-    return dates;
+
+
+  return dates;
 });
