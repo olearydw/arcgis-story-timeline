@@ -13,7 +13,7 @@
             name: 'controllers',
             location: locationPath + '/js/controllers',
             //main: 'main'
-            main: 'main'
+            main: 'appController'
         },{
             name: 'config',
             location: locationPath + '/config'
