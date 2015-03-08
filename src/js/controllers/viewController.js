@@ -24,8 +24,6 @@
 
     var credObj = modelmodule.getCredentialObj();
 
-    console.log(credObj);
-
     dojo.byId("serverUrl").innerHTML = "Server: " + credObj.server;
     dojo.byId("userName").innerHTML = "User Id: <span>" + credObj.userId + "</span>";
     dojo.byId("createTime").innerHTML = "Created: <span>" + datesmodule.formatDateToUTC(new Date(credObj.creationTime)) + "</span>";
