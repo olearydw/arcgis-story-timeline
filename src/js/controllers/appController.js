@@ -10,15 +10,11 @@
 ], function (ready, domStyle, domAttr, dom, on, loginmodule, viewController) {
 
   ready(function () {
-
-    
     loginmodule.doCheckLoginStatus(function (loggedIn) {
       viewController.doSetLoginView(loggedIn);
     });
     
     doSetEventHandlers();
-    //domStyle.set("anonymousPanel", "display", "block");
-
   });
 
   function doSetEventHandlers() {
