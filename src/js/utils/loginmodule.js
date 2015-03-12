@@ -8,7 +8,6 @@
   "dojo/domReady!"
 ], function(ready, arcgisPortal, OAuthInfo, esriId, modelmodule, config){
   ready(function () {
-    //console.log('ready in the loginmodule');
     //console.log(config.appId);
   });
 
@@ -19,7 +18,7 @@
     authNamespace: "portal_oauth_popup",
     expiration: 30,
     locale: "en-us",
-    minTimeUntilExpiration: 20,
+    minTimeUntilExpiration: 60,
     popupCallbackUrl: "oauth-callback.html",
     portalUrl: config.portalUrl,
     popup: true
@@ -52,7 +51,7 @@
     esriId.destroyCredentials();
     modelmodule.destroyCredentialObj();
     callback(true);
-  }
+  };
 
   return login;
 

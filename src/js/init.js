@@ -12,7 +12,6 @@
         packages: [{
             name: 'controllers',
             location: locationPath + '/js/controllers',
-            //main: 'main'
             main: 'appController'
         },{
             name: 'config',
