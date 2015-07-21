@@ -1,19 +1,17 @@
 ﻿define([
   "dojo/ready",
   "dojo/on",
-  "esri/arcgis/Portal",
   "esri/arcgis/OAuthInfo",
   "esri/IdentityManager",
   "models/modelmodule",
   "config/config",
   "dojo/domReady!"
-], function(ready, on, arcgisPortal, OAuthInfo, esriId, modelmodule, config){
+], function(ready, on, OAuthInfo, esriId, modelmodule, config){
   ready(function () {
     //console.log(config.appId);
   });
 
   var login = {};
-
   var info = new OAuthInfo({
     appId: config.appId,
     authNamespace: "portal_oauth_popup",
@@ -31,10 +29,6 @@
     esriId.checkSignInStatus(info.portalUrl).then(
       function (obj) {
         modelmodule.setCredentialObj(obj);
-        login.getPortalObj(obj.server, function(portal){
-          console.log(portal);
-          modelmodule.setPortalObj(portal);
-        });
         callback(true);
       }
     ).otherwise(
@@ -47,28 +41,9 @@
     esriId.getCredential(info.portalUrl, {
       oAuthPopupConfirmation: false
     }).then(function (obj) {
-      console.log(obj);
       modelmodule.setCredentialObj(obj);
-      login.getPortalObj(obj.server);
       callback(true);
     });
-  };
-
-
-
-
-
-  login.getPortalObj = function(url) {
-    var pObj;
-    var p = new arcgisPortal.Portal(url);
-      on(p, 'load', function(){
-        p.signIn().then(function (portalUser) {
-          pObj = portalUser.portal;
-          modelmodule.setPortalObj(pObj);
-          esriConfig.defaults.io.corsEnabledServers.push( pObj.urlKey + "." + pObj.customBaseUrl );
-        });
-        //callback(pObj);
-      });
   };
 
   login.doOauthSignOut = function (callback) {
@@ -78,5 +53,4 @@
   };
 
   return login;
-
 });

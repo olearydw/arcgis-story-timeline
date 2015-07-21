@@ -18,22 +18,24 @@
   };
 
   view.doShowSignedIn = function () {
+    var credObj;
     domStyle.set("signInBtn", "display", "none");
     domStyle.set("signOutBtn", "display", "block");
     domStyle.set("loggedInDiv", "opacity", 1);
 
-    var credObj = modelmodule.getCredentialObj();
-
+    credObj = modelmodule.getCredentialObj();
     dojo.byId("serverUrl").innerHTML = "Server: " + credObj.server;
     dojo.byId("userName").innerHTML = "User Id: <span>" + credObj.userId + "</span>";
     dojo.byId("createTime").innerHTML = "Created: <span>" + datesmodule.formatDateToUTC(new Date(credObj.creationTime)) + "</span>";
     dojo.byId("expireTime").innerHTML = "Expires: <span>" + datesmodule.formatDateToUTC(new Date(credObj.expires)) + "</span>";
     dojo.byId("isSSL").innerHTML = "Is SSL: <span>" + credObj.ssl + "</span>";
     dojo.byId("myToken").innerHTML = "Token: <span>" + credObj.token + "</span>";
+  };
 
-
-
-
+  view.doShowPortalInfo = function(obj) {
+    domStyle.set("portalInfoDiv", "opacity", 1);
+    dojo.byId("portalUrl").innerHTML = "Portal: " + obj.pUrl;
+    dojo.byId("portalName").innerHTML = "Portal Name:  <span>" + obj.pName  + "</span>";
   };
 
   view.doShowSignedOut = function () {

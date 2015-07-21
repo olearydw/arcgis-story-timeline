@@ -19,7 +19,6 @@
   };
 
   model.setPortalObj = function (pObj) {
-    console.log(pObj);
     myPortal = pObj;
   };
 
@@ -32,5 +31,4 @@
   };
 
   return model;
-
 });
