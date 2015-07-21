@@ -34,7 +34,7 @@
   <div class="jumbotron">
     <div class="container">
       <h1>My WebGIS Starter App</h1>
-      <p>This is a simple template app created with a yo-generator for quickly launching a WebGIS web app already wired up with OAuth2 authentication and severl handy modules for kickstarting your app development.</p>
+      <p>This is a simple template app created with a yo-generator for quickly launching a WebGIS web app already wired up with OAuth2 authentication and several handy modules for kickstarting your app development.</p>
       <div id="logInControlDiv" class="logInControlDiv">
         <button id="signInBtn" type="submit" class="btn btn-success signInBtn">Sign In</button>
         <button id="signOutBtn" type="submit" class="btn btn-info signOutBtn">Sign Out</button>
@@ -56,6 +56,18 @@
         </div>
       </div>
     </div>
+
+    <div id="portalInfoDiv" class="row loggedInDiv">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3 id="portalUrl"></h3>
+          <p id="pUsername"></p>
+          <p id="pCreateTime"></p>
+          <p id="pIsSSL"></p>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 
