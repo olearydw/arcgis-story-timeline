@@ -32,6 +32,9 @@
             name: 'app',
             location: locationPath + '/js'
             //main: 'main'
+        }, {
+            name: 'vis',
+            location: locationPath + 'libs/visjs'
         }]
     }, ['controllers']);
 

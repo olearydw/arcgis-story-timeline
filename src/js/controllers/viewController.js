@@ -4,8 +4,9 @@
   "dojo/dom-attr",
   "dojo/dom",
   "models/modelmodule",
-  "utils/datesmodule"
-], function (ready, domStyle, domAttr, dom, modelmodule, datesmodule) {
+  "utils/datesmodule",
+  "vis/vis.min"
+], function (ready, domStyle, domAttr, dom, modelmodule, datesmodule, vis) {
 
   var view = {};
 
@@ -49,6 +50,13 @@
     dojo.byId("expireTime").innerHTML = "";
     dojo.byId("myToken").innerHTML = "";
   };
+
+  view.doShowTimeline = function(data) {
+    var container = dojo.byId('viz');
+    var options = {};
+    var dataSet = new vis.DataSet(data);
+    new vis.Timeline(container, dataSet, options);
+  }
 
   return view;
 });

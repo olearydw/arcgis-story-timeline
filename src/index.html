@@ -4,15 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
 <title>Portal Items</title>
-  <link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
+  <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
   <link rel="stylesheet" href="libs/bootstrap-3.3.2/css/bootstrap.css" />
-  <!--<link rel="stylesheet" href="assets/css/bootstrapmap.css" />-->
+  <link rel="stylesheet" href="libs/visjs/vis.min.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
       var dojoConfig = { isDebug: false, parseOnLoad: true };
   </script>
-  <!--<script src="http://js.arcgis.com/3.13/"></script>-->
-  <!--<script src="js/init.js"></script>-->
 </head>
 
 <body>
@@ -66,10 +64,16 @@
       </div>
     </div>
 
+    <div id="timelineDiv" class="row">
+      <div id="viz"></div>
+    </div>
+
+    <div class="row" style="margin-bottom: 25px;"></div>
+
 
   </div>
 
-  <script src="http://js.arcgis.com/3.13/"></script>
+  <script src="http://js.arcgis.com/3.14/"></script>
   <script src="js/init.js"></script>
 </body>
 </html>
