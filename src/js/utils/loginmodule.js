@@ -26,7 +26,7 @@
   esriId.registerOAuthInfos([info]);
 
   login.doCheckLoginStatus = function (callback) {
-    esriId.checkSignInStatus(info.portalUrl).then(
+    esriId.checkSignInStatus(info.portalUrl + "sharing").then(
       function (obj) {
         modelmodule.setCredentialObj(obj);
         callback(true);
@@ -38,7 +38,7 @@
   };
 
   login.doOauthFormLogin = function (callback) {
-    esriId.getCredential(info.portalUrl, {
+    esriId.getCredential(info.portalUrl + "sharing", {
       oAuthPopupConfirmation: false
     }).then(function (obj) {
       modelmodule.setCredentialObj(obj);
