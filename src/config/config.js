@@ -6,6 +6,6 @@
 //"portalUrl": "https://rigel.esri.com/webgis"
 
 define({
-  "appId": "yGaPXbbzACYnaKJQ",
-  "portalUrl": "https://www.arcgis.com"
+  "appId": "yRGUqW8JHiQPKIGL",
+  "portalUrl": "http://rigel.esri.com/webgis"
 });
