@@ -3,10 +3,11 @@
   "dojo/dom-style",
   "dojo/dom-attr",
   "dojo/dom",
+  "dojo/query",
   "models/modelmodule",
   "utils/datesmodule",
   "vis/vis.min"
-], function (ready, domStyle, domAttr, dom, modelmodule, datesmodule, vis) {
+], function (ready, domStyle, domAttr, dom, query, modelmodule, datesmodule, vis) {
 
   var view = {};
 
@@ -23,7 +24,7 @@
     domStyle.set("signInBtn", "display", "none");
     domStyle.set("signOutBtn", "display", "block");
     domStyle.set("loggedInDiv", "opacity", 1);
-
+    query("#navTabs > li").removeClass("hidden");
     credObj = modelmodule.getCredentialObj();
     dojo.byId("serverUrl").innerHTML = "Server: " + credObj.server;
     dojo.byId("userName").innerHTML = "User Id: <span>" + credObj.userId + "</span>";

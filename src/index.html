@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="//js.arcgis.com/3.14/dijit/themes/nihilo/nihilo.css">
   <link rel="stylesheet" href="libs/bootstrap-3.3.2/css/bootstrap.css" />
   <link rel="stylesheet" href="libs/visjs/vis.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" type="image/vnd.microsoft.icon" href="assets/img/favicon.ico"/>
+  <link rel="icon" href="assets/img/favicon.ico"/>
 
   <script>
       var dojoConfig = { isDebug: false, parseOnLoad: false };
@@ -17,34 +18,53 @@
 </head>
 
 <body class="nihilo">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
+      <div class="nav navbar-nav navbar-right">
+        <!--<a class="btn btn-default" href="#" role="button">Link</a>-->
+        <a id="signInBtn" type="button" class="btn btn-primary btn-sm navbar-btn"><span>Sign In</span></a>
+        <a id="signOutBtn" type="button" class="btn btn-danger btn-sm navbar-btn"><span>Sign Out</span></a>
+      </div>
+      <!-- /.navbar-right -->
+
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a id="projectTitle" class="navbar-brand" href="#">Project name</a>
+        <a id="navHome" class="navbar-brand brandImg" href="#">
+          <img alt="Brand" src="assets/img/iMapPin.png">
+        </a>
+        <a id="app" class="navbar-brand" ui-sref="sites"><span
+            class="site-logo">Server Road Ahead Session Demos</span></a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse"></div>
+    </div>
+    <div class="cal-header">
+      <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="navTabs" class="nav nav-tabs">
+            <li role="presentation" class="active">
+              <a data-toggle="tab" href="#landingDiv">Home</a>
+            </li>
+            <li role="presentation" class="hidden">
+              <a id="usageLink" data-toggle="tab" href="#one">Sample 1</a>
+            </li>
+            <li role="presentation" class="hidden">
+              <a id="depLink" data-toggle="tab" href="#two">Sample 2</a>
+            </li>
+            <li role="presentation" class="hidden">
+              <a id="adLink" data-toggle="tab" href="#three">Sample 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1>My WebGIS Starter App</h1>
-      <p>This is a simple template app created with a yo-generator for quickly launching a WebGIS web app already wired up with OAuth2 authentication and several handy modules for kickstarting your app development.</p>
-      <div id="logInControlDiv" class="logInControlDiv">
-        <button id="signInBtn" type="submit" class="btn btn-success signInBtn">Sign In</button>
-        <button id="signOutBtn" type="submit" class="btn btn-info signOutBtn">Sign Out</button>
-      </div>
-    </div>
-  </div>
-
   <div class="container">
-    
     <div id="loggedInDiv" class="row loggedInDiv">
       <div class="panel panel-default">
         <div class="panel-body">
