@@ -229,3 +229,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.name
+.idea/do-portal-itemdep.iml
+.idea/misc.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/workspace.xml
