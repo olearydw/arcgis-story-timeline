@@ -56,8 +56,19 @@
     var container = dojo.byId('timeline');
     var options = {};
     var dataSet = new vis.DataSet(data);
-    new vis.Timeline(container, dataSet, options);
-  }
+    var timeline = new vis.Timeline(container, dataSet, options);
+
+    timeline.on('select', function(props){
+      var selectedItem = modelmodule.getTimelineItemInfos(props.items[0]);
+      if(selectedItem) {
+        view.doUpdateStage(selectedItem);
+      }
+    })
+  };
+
+  view.doUpdateStage = function(obj) {
+    console.log(obj.type);
+  };
 
   return view;
 });
