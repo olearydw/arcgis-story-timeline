@@ -18,14 +18,51 @@
 </head>
 
 <body class="nihilo">
+  <div id="wrap">
+
+
+
+    <div class="cal-header">
+
+      <div class="container">
+        <div class="col-lg-6">
+          <h1 class="panel-title" style="float:left;">A Story Title</h1>
+        </div>
+        <div class="col-lg-6">
+          <a id="signInBtn" type="button" class="btn btn-primary" style="float:right;">
+            <span>Sign In</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="main" class="clearfix">
+      <div class="container">
+        <iframe src="http://storymaps.esri.com/templates/swipe/"
+                width="100%" height="650px"
+                frameborder="0" scrolling="no"
+                marginheight="0" marginwidth="0">
+        </iframe>
+        <div id="timeline" class="timelineDiv"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <img src="assets/img/ngaseal.png" height="75px;">
+  </div>
+
+  <!--
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <!--
     <div class="container">
       <div class="nav navbar-nav navbar-right">
-        <!--<a class="btn btn-default" href="#" role="button">Link</a>-->
+        <a class="btn btn-default" href="#" role="button">Link</a>
         <a id="signInBtn" type="button" class="btn btn-primary btn-sm navbar-btn"><span>Sign In</span></a>
         <a id="signOutBtn" type="button" class="btn btn-danger btn-sm navbar-btn"><span>Sign Out</span></a>
       </div>
-      <!-- /.navbar-right -->
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -38,63 +75,42 @@
         <a id="navHome" class="navbar-brand brandImg" href="#">
           <img alt="Brand" src="assets/img/iMapPin.png">
         </a>
-        <a id="app" class="navbar-brand" ui-sref="sites"><span
-            class="site-logo">Server Road Ahead Session Demos</span></a>
+        <a id="app" class="navbar-brand" ui-sref="sites">
+          <span class="site-logo">Server Road Ahead Session Demos</span>
+        </a>
       </div>
     </div>
+
     <div class="cal-header">
+
       <div class="container">
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul id="navTabs" class="nav nav-tabs">
-            <li role="presentation" class="active">
-              <a data-toggle="tab" href="#landingDiv">Home</a>
-            </li>
-            <li role="presentation" class="hidden">
-              <a id="usageLink" data-toggle="tab" href="#one">Sample 1</a>
-            </li>
-            <li role="presentation" class="hidden">
-              <a id="depLink" data-toggle="tab" href="#two">Sample 2</a>
-            </li>
-            <li role="presentation" class="hidden">
-              <a id="adLink" data-toggle="tab" href="#three">Sample 3</a>
-            </li>
-          </ul>
-        </div>
+        <h1 class="panel-title">A Story Title</h1>
       </div>
+
     </div>
   </nav>
-
-  <div class="container">
-    <div id="loggedInDiv" class="row loggedInDiv">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h3 id="serverUrl"></h3>
-          <p id="userName"></p>
-          <p id="createTime"></p>
-          <p id="expireTime"></p>
-          <p id="isSSL"></p>
-          <p id="myToken"></p>
-        </div>
-      </div>
+  <div class="wrapper">
+    <div class="container">
+      <section class="mainDiv">
+        <iframe src="http://esrifederal.maps.arcgis.com/apps/StorytellingTextLegend/index.html?appid=6b04bbf475bd4f3b8bbf4bd9527afc43"
+                width="100%"
+                frameborder="0" scrolling="no"
+                marginheight="0" marginwidth="0">
+        </iframe>
+        <div id="timeline" class="timelineDiv"></div>
+      </section>
     </div>
-
-    <div id="portalInfoDiv" class="row loggedInDiv">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h3 id="portalUrl"></h3>
-          <p id="portalName"></p>
-        </div>
-      </div>
-    </div>
-
-    <div id="timelineDiv" class="row">
-      <div id="viz"></div>
-    </div>
-
-    <div class="row" style="margin-bottom: 25px;"></div>
-
-
+    <div class="push"></div>
   </div>
+
+  <footer>
+    <div>Footer</div>
+  </footer>
+-->
+
+
+
+
 
   <script src="http://js.arcgis.com/3.14/"></script>
   <script src="js/init.js"></script>

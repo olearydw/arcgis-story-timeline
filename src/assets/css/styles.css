@@ -1,4 +1,5 @@
-﻿html, body {
+﻿/*
+html, body {
   font-family: Lucida Sans, Lucida Grande, Arial !important;
   font-size: 14px;
   width: 100%;
@@ -7,9 +8,37 @@
   padding: 0px;
 }
 
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -142px;
+}
+
+section {
+  padding-top: 20px;
+}
+
+.cal-header {
+  height: 100px;
+}
+
+.timelineDiv {
+  height: 200px;
+}
+
+footer, .push{
+  height: 142px;
+  background: #f2f2f2;
+}
+
 .brandImg img{
   margin-top: -10px;
   height: 40px;
+}
+
+.mainDiv {
+  height: 100%;
 }
 
 .signInBtn {
@@ -22,7 +51,6 @@
 
 .cal-header {
   background-image: url("../img/header-topo.svg");
-  /*min-height: 75px;*/
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
@@ -35,5 +63,81 @@
 .nav-tabs {
   border-bottom: none;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*/
+
+/* must declare 0 margins on everything, also for main layout components
+use padding, not vertical margins (top and bottom) to add spacing, else
+those margins get added to total height and your footer gets pushed down
+a bit more, creating vertical scroll bars in the browser */
+
+html, body, #wrap {
+  height: 100%;
+  background: #777;
+}
+
+body > #wrap {
+  height: auto;
+  min-height: 100%;
+}
+
+#main {
+  padding-bottom: 100px;  /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  text-align: center;
+  background: #444;
+  margin-top: -100px;  /* negative value of footer height */
+  height: 100px;
+  clear: both;
+}
+
+.cal-header {
+  background-image: url("../img/header-topo.svg");
+  height: 75px;
+  box-shadow: 0px 5px 20px 5px #444;
+}
+
+.mainDiv {
+  height: 700px;
+  background: #000;
+}
+
+.timelineDiv {
+  height: 200px;
+  background: #f2f2f2;
+  margin-bottom: 15px;
+}
+
+/* CLEAR FIX */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+  height: 0;
+}
+.clearfix {
+  display: block;
+}
+
+#main, .leader {
+  margin-top: 15px;
+}
+
+
 
 

@@ -53,7 +53,7 @@
   };
 
   view.doShowTimeline = function(data) {
-    var container = dojo.byId('viz');
+    var container = dojo.byId('timeline');
     var options = {};
     var dataSet = new vis.DataSet(data);
     new vis.Timeline(container, dataSet, options);

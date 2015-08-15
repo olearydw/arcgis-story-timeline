@@ -10,6 +10,9 @@
 //"portalUrl": "https://www.arcgis.com"
 
 define({
-  "appId": "yRGUqW8JHiQPKIGL",
-  "portalUrl": "https://rigel.esri.com/webgis"
+  //"appId": "yRGUqW8JHiQPKIGL",
+  //"portalUrl": "https://rigel.esri.com/webgis"
+  "appId": "ZYu3Z8tgouL8K5ir",
+  "portalUrl": "https://www.arcgis.com"
 });
+
