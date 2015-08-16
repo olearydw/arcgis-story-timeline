@@ -3,11 +3,12 @@
   "dojo/dom-style",
   "dojo/dom-attr",
   "dojo/dom",
+  "dojo/dom-construct",
   "dojo/query",
   "models/modelmodule",
   "utils/datesmodule",
   "vis/vis.min"
-], function (ready, domStyle, domAttr, dom, query, modelmodule, datesmodule, vis) {
+], function (ready, domStyle, domAttr, dom, domConstruct, query, modelmodule, datesmodule, vis) {
 
   var view = {};
 
@@ -67,7 +68,27 @@
   };
 
   view.doUpdateStage = function(obj) {
-    console.log(obj.type);
+    view.doCreateEmbedFragment(obj, function(embed){
+      console.log('EMBED VAL', embed);
+      domConstruct.empty("mainStageDiv");
+
+      domConstruct.place(embed, "mainStageDiv", "first");
+
+
+
+    })
+  };
+
+  view.doCreateEmbedFragment = function(obj, callback) {
+    //console.log(obj);
+    var html;
+    if(obj.type === 'image') {
+
+    } else {
+      html = '<iframe width="100%" height="450" src="' + obj.url + '" frameborder="0">' +
+        '</iframe>';
+    }
+    callback(html);
   };
 
   return view;
