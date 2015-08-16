@@ -18,7 +18,7 @@
 
   function doSetEventHandlers() {
     console.log('SET UP EVENT HANDLERS');
-    on(dom.byId("signInBtn"), "click", handleSignIn);
+    //on(dom.byId("signInBtn"), "click", handleSignIn);
     //on(dom.byId("signOutBtn"), "click", handleSignOut);
   }
 
@@ -26,7 +26,7 @@
     loginmodule.doOauthFormLogin(function (loggedIn) {
       console.log(loggedIn);
       if(loggedIn) {
-        viewController.doShowTimeline(modelmodule.getTimelineDataSet());
+        //
       }
       //viewController.doSetLoginView(loggedIn);
       //doInitPortal();
@@ -37,7 +37,7 @@
 
   function doInitApp(){
     console.log('APP INITIALIZED');
-    //viewController.doShowTimeline(modelmodule.getTimelineDataSet());
+    viewController.doShowTimeline(modelmodule.getTimelineDataSet());
   }
 
 });

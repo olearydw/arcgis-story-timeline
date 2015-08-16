@@ -55,7 +55,13 @@
 
   view.doShowTimeline = function(data) {
     var container = dojo.byId('timeline');
-    var options = {};
+    var options = {
+      width: '100%',
+      height: '300px',
+      //end: new Date(1992,1,1),
+      selectable: true,
+      multiselect: false
+    };
     var dataSet = new vis.DataSet(data);
     var timeline = new vis.Timeline(container, dataSet, options);
 
