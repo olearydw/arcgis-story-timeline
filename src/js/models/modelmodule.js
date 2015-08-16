@@ -130,6 +130,16 @@
         id: 6,
         url: 'https://www.youtube.com/embed/Vb1Mtx9BONA',
         type: 'video'
+      },
+      {
+        id: 7,
+        url: 'https://www.youtube.com/embed/Vb1Mtx9BONA',
+        type: 'video'
+      },
+      {
+        id: 8,
+        url: 'assets/img/iran-talks-three.jpg',
+        type: 'image'
       }
     ];
 

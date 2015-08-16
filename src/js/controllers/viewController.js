@@ -89,10 +89,9 @@
     //console.log(obj);
     var html;
     if(obj.type === 'image') {
-
+      html = '<img src="' + obj.url + '" />';
     } else {
-      html = '<iframe width="100%" height="450" src="' + obj.url + '" frameborder="0">' +
-        '</iframe>';
+      html = '<iframe width="100%" height="450" src="' + obj.url + '" frameborder="0"></iframe>';
     }
     callback(html);
   };
