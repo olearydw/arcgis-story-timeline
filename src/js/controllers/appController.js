@@ -37,7 +37,7 @@
 
   function doInitApp(){
     console.log('APP INITIALIZED');
-    viewController.doShowTimeline(modelmodule.getTimelineDataSet());
+    viewController.doShowTimeline(modelmodule.getTimelineDataSet(), modelmodule.getTimelineGroupsDataSet());
   }
 
 });
