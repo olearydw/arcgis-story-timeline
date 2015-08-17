@@ -63,7 +63,8 @@
       {
         id: 1,
         start: new Date(1990,6,1),
-        content: 'Iran and China sign 10 year nuclear agreement', type:'point',
+        content: 'Iran and China sign 10 year nuclear agreement',
+        type:'point',
         group: 1
       },
       {
@@ -106,9 +107,9 @@
       {
         id: 7,
         start: new Date(2013,7,31),
-        end: new Date(),
-        content: 'Iran Freedom Support Act',
-        type: 'range',
+        //end: new Date(2025,8,1),
+        content: 'Iran Freedom Support Act (Sanctions)',
+        type: 'point',
         group: 2
       },
       {
@@ -120,7 +121,7 @@
       },
       {
         id: 9,
-        start: new Date(2015,8,1),
+        start: new Date(2015,5,22),
         end: new Date(2025,8,1),
         content: 'Russia agrees to build 8 new Iranian reactors',
         type: 'range',
@@ -131,8 +132,8 @@
     var timelineItemsArr = [
       {
         id: 1,
-        url: 'assets/img/iran/iran_first_reactor.jpg',
-        type: 'image'
+        url: '',
+        type: undefined
       },
       {
         id: 2,
@@ -142,17 +143,17 @@
       {
         id: 3,
         url: 'assets/img/iran/iran_first_reactor.jpg',
-        type: 'image'
+        type: 'image' //try to get webmap
       },
       {
         id: 4,
         url: 'assets/img/bushehr3.png',
-        type: 'image'
+        type: 'image' //need a report looking graphic
       },
       {
         id: 5,
         url: '',
-        type: undefined
+        type: undefined  //try to get webmap embed
       },
       {
         id: 6,
@@ -162,7 +163,7 @@
       {
         id: 7,
         url: 'https://www.youtube.com/embed/Vb1Mtx9BONA',
-        type: 'video'
+        type: 'video'  //try to get webmap embed
       },
       {
         id: 8,

@@ -62,9 +62,9 @@
     var container = dojo.byId('timeline');
     var options = {
       width: '100%',
-      height: '300px',
+      height: '350px',
       start: new Date(1990,1,1),
-      end: new Date(2010,1,1),
+      end: new Date(2000,1,1),
       selectable: true,
       multiselect: false
     };
