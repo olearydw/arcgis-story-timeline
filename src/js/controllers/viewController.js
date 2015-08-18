@@ -73,6 +73,7 @@
     var timeline = new vis.Timeline(container, dataSet, groups, options);
 
     timeline.on('select', function(props){
+      console.log(props.event.target.innerHTML);
       var selectedItem = modelmodule.getTimelineItemInfos(props.items[0]);
       if(selectedItem) {
         view.doUpdateStage(selectedItem);
@@ -81,21 +82,12 @@
   };
 
   view.doUpdateStage = function(obj) {
-    view.doCreateEmbedFragment(obj, function(embed){
-      var val = embed;
-      var pic = val.indexOf("hero-unit");
+    console.log('EMBED VAL HERE', obj);
+    if(obj.id > 1){
+      var embed = obj.embed;
       domConstruct.empty("mainStageDiv");
       domConstruct.place(embed, "mainStageDiv", "first");
-
-      if(pic === -1){
-        console.log('hero unit val', pic);
-        domStyle.set("hero-unit-id", "backgroundImage", "url('assets/img/loading.gif')");
-      }
-
-
-
-
-    })
+    }
   };
 
   view.doCreateEmbedFragment = function(obj, callback) {

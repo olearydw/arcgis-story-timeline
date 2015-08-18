@@ -63,7 +63,7 @@
       {
         id: 1,
         start: new Date(1990,6,1),
-        content: 'Iran and China sign 10 year nuclear agreement',
+        content: 'Iran and China sign 10 year nuclear cooperation agreement',
         type:'point',
         group: 1
       },
@@ -85,7 +85,7 @@
         id: 4,
         start: new Date(1995,6,1),
         end: new Date(2011,6,1),
-        content: 'Russia builds+fuels Bushehr',
+        content: 'Russia builds and fuels Bushehr nuclear plant',
         type: 'range',
         group: 1
       },
@@ -132,47 +132,47 @@
     var timelineItemsArr = [
       {
         id: 1,
-        url: '',
+        embed: '',
         type: undefined
       },
       {
         id: 2,
-        url: 'assets/img/iran/commercial_plant.jpg',
+        embed: '<div class="hero-unit" style="background-image: url(assets/img/iran/commercial_plant.jpg)"></div>',
         type: 'image'
       },
       {
         id: 3,
-        url: 'assets/img/iran/iran_first_reactor.jpg',
-        type: 'image' //try to get webmap
+        embed: '<style>.embed-container {position: relative; padding-bottom: 450px; margin-bottom: 15px; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Nuclear Technology Center of Isfahan" src="http://wdcintel.maps.arcgis.com/apps/Embed/index.html?webmap=bf372728ee4c4c71ba11dba2819e7ea1&amp;extent=51.0223,32.3775,52.4588,33.0109&amp;zoom=true&amp;scale=true&amp;disable_scroll=false&amp;theme=light"></iframe></div>',
+        type: 'map'
       },
       {
         id: 4,
-        url: 'assets/img/bushehr3.png',
+        embed: '<div class="hero-unit" style="background-image: url(assets/img/iran/bushehr_lg.jpg)"></div>',
         type: 'image' //need a report looking graphic
       },
       {
         id: 5,
-        url: '',
-        type: undefined  //try to get webmap embed
+        embed: '<style>.embed-container {position: relative; padding-bottom: 450px; margin-bottom: 15px; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Countries with sanctions against Iran" src="http://wdcintel.maps.arcgis.com/apps/Embed/index.html?webmap=f9614f42b89e450cb1807c91f672aeee&amp;extent=-180,-39.9142,180,81.5174&amp;zoom=true&amp;scale=true&amp;disable_scroll=false&amp;theme=light"></iframe></div>',
+        type: 'map'
       },
       {
         id: 6,
-        url: 'http://www.arcgis.com/apps/MapTour/?appid=77fee1aea38148a592d1271353b46a98&webmap=d33f40074ace4316bef8e35a777353f1',
+        embed: '<iframe width="100%" height="450px" src="http://www.arcgis.com/apps/MapTour/?appid=77fee1aea38148a592d1271353b46a98&webmap=d33f40074ace4316bef8e35a777353f1" frameborder="0"></iframe>',
         type: 'app'
       },
       {
         id: 7,
-        url: 'https://www.youtube.com/embed/Vb1Mtx9BONA',
-        type: 'video'  //try to get webmap embed
+        embed: '',
+        type: undefined  //try to get webmap embed
       },
       {
         id: 8,
-        url: 'assets/img/iran-talks-three.jpg',
+        embed: '<div class="hero-unit" style="background-image: url(assets/img/iran/iran-talks-three.jpg)"></div>',
         type: 'image'
       },
       {
         id: 9,
-        url: 'https://screen.yahoo.com/russia-may-build-eight-nuclear-105030212.html?format=embed',
+        embed: '<iframe width="100%" height="450px" src="https://screen.yahoo.com/russia-may-build-eight-nuclear-105030212.html?format=embed" frameborder="0"></iframe>',
         type: 'video'
       }
     ];
