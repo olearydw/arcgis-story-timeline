@@ -142,7 +142,7 @@
       },
       {
         id: 3,
-        embed: '<style>.embed-container {position: relative; padding-bottom: 450px; margin-bottom: 15px; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Nuclear Technology Center of Isfahan" src="http://wdcintel.maps.arcgis.com/apps/Embed/index.html?webmap=bf372728ee4c4c71ba11dba2819e7ea1&amp;extent=51.0223,32.3775,52.4588,33.0109&amp;zoom=true&amp;scale=true&amp;disable_scroll=false&amp;theme=light"></iframe></div>',
+        embed: '<style>.embed-container {position: relative; padding-bottom: 450px; margin-bottom: 15px; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Countries with non-U.N. mandated sanctions against Iran" src="http://wdcintel.maps.arcgis.com/apps/Embed/index.html?webmap=f9614f42b89e450cb1807c91f672aeee&amp;extent=-180,-39.9142,180,81.5174&amp;zoom=true&amp;scale=true&amp;disable_scroll=false&amp;theme=light"></iframe></div>',
         type: 'map'
       },
       {
@@ -162,7 +162,7 @@
       },
       {
         id: 7,
-        embed: '',
+        embed: '<style>.embed-container {position: relative; padding-bottom: 450px; margin-bottom: 15px; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Sanctions Against Iran - U.N. Countries" src="http://wdcintel.maps.arcgis.com/apps/Embed/index.html?webmap=41b5ded481b94dbabaca8ff8e01dd221&amp;extent=-180,-44.3437,180,80.5888&amp;zoom=true&amp;scale=true&amp;disable_scroll=false&amp;theme=light"></iframe></div>',
         type: undefined  //try to get webmap embed
       },
       {
